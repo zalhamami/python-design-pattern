@@ -11,6 +11,10 @@ def get_vehicle(name):
         car = Car(),
         plane = Plane()
     )
-    return vehicles[name]
+    
+    if (name in vehicles):
+        return vehicles[name]
 
-get_vehicle('plane')
+    return 'No vechile found'
+
+print(get_vehicle('cars'))
