@@ -4,91 +4,55 @@ A comprehensive collection of design patterns implemented in Python to demonstra
 
 ## Overview
 
-This repository serves as a learning resource for understanding and implementing common design patterns in Python. Each pattern is implemented with clear examples and explanations to help developers apply these concepts in their own projects.
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Design Pattern Categories](#design-pattern-categories)
-- [Pattern Implementations](#pattern-implementations)
-- [Usage Examples](#usage-examples)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Installation
-
-Clone the repository and set up the environment:
-
-```bash
-git clone https://github.com/zalhamami/python-design-pattern.git
-cd python-design-pattern
-```
-
-No additional dependencies are required to run the examples, as they use Python's standard library.
+This repository provides practical implementations of classic design patterns in Python. Each pattern is implemented as a standalone example file, making it easy to understand and apply these concepts in your own projects.
 
 ## Design Pattern Categories
 
-Design patterns are typically categorized into three main groups:
+The repository is organized based on the three main categories of design patterns:
 
 ### 1. Creational Patterns
 
-Patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
+Patterns that deal with object creation mechanisms:
 
-- [Factory Method](./creational/factory_method/)
-- [Abstract Factory](./creational/abstract_factory/)
-- [Builder](./creational/builder/)
-- [Prototype](./creational/prototype/)
-- [Singleton](./creational/singleton/)
+- [Abstract Factory](./creational/abstract_factory.py) - Provides an interface for creating families of related objects
+- [Builder](./creational/builder.py) - Separates object construction from its representation
+- [Factory](./creational/factory.py) - Creates objects without specifying the exact class to create
+- [Prototype](./creational/prototype.py) - Creates new objects by copying existing ones
+- [Singleton](./creational/singleton.py) - Ensures a class has only one instance
 
 ### 2. Structural Patterns
 
-Patterns that focus on composition of classes or objects to form larger structures.
+Patterns that focus on object composition:
 
-- [Adapter](./structural/adapter/)
-- [Bridge](./structural/bridge/)
-- [Composite](./structural/composite/)
-- [Decorator](./structural/decorator/)
-- [Facade](./structural/facade/)
-- [Flyweight](./structural/flyweight/)
-- [Proxy](./structural/proxy/)
+- [Adapter](./structural/adapter.py) - Allows incompatible interfaces to work together
+- [Bridge](./structural/bridge.py) - Separates an abstraction from its implementation
+- [Composite](./structural/composite.py) - Composes objects into tree structures
+- [Decorator](./structural/decorator.py) - Adds responsibilities to objects dynamically
+- [Proxy](./structural/proxy.py) - Provides a surrogate for another object
 
 ### 3. Behavioral Patterns
 
-Patterns that focus on communication between objects and how responsibilities are assigned.
+Patterns that focus on communication between objects:
 
-- [Chain of Responsibility](./behavioral/chain_of_responsibility/)
-- [Command](./behavioral/command/)
-- [Iterator](./behavioral/iterator/)
-- [Mediator](./behavioral/mediator/)
-- [Memento](./behavioral/memento/)
-- [Observer](./behavioral/observer/)
-- [State](./behavioral/state/)
-- [Strategy](./behavioral/strategy/)
-- [Template Method](./behavioral/template_method/)
-- [Visitor](./behavioral/visitor/)
-
-## Pattern Implementations
-
-Each pattern implementation includes:
-
-- A brief explanation of the pattern
-- UML diagram where applicable
-- Example code demonstrating the pattern
-- Common use cases and scenarios
-- Advantages and disadvantages
+- [Chain of Responsibility](./behavioural/chain.py) - Passes requests along a chain of handlers
+- [Iterator](./behavioural/iterator.py) - Accesses elements of a collection sequentially
+- [Observer](./behavioural/observer.py) - Defines a one-to-many dependency between objects
+- [Strategy](./behavioural/strategy.py) - Defines a family of algorithms and makes them interchangeable
+- [Visitor](./behavioural/visitor.py) - Separates algorithms from the objects on which they operate
 
 ## Usage Examples
 
 ### Example: Singleton Pattern
 
 ```python
-from creational.singleton.singleton import Singleton
+# Import the Singleton class
+# You can directly use the singleton.py file
 
-# Create first instance
+# First instance
 singleton1 = Singleton()
 singleton1.value = 10
 
-# Create second instance (should be the same object)
+# Second instance (same object)
 singleton2 = Singleton()
 
 # Test if both variables reference the same object
@@ -104,32 +68,28 @@ print(f"Singleton1 value after change: {singleton1.value}")  # Output: 20
 ### Example: Strategy Pattern
 
 ```python
-from behavioral.strategy.strategy import Context, ConcreteStrategyA, ConcreteStrategyB
-
-# Create context with strategy A
-context = Context(ConcreteStrategyA())
-result = context.execute_strategy()
-print(f"Result with strategy A: {result}")
-
-# Change strategy to B
-context.strategy = ConcreteStrategyB()
-result = context.execute_strategy()
-print(f"Result with strategy B: {result}")
+# Import from strategy.py
+# context = Context()
+# context.set_strategy(ConcreteStrategyA())
+# result = context.execute_strategy()
 ```
+
+## Learning Resources
+
+Each pattern file includes:
+- Brief explanation of the pattern
+- Implementation example
+- Use cases when the pattern is applicable
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! If you'd like to add new patterns or improve existing ones:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-pattern`)
-3. Commit your changes (`git commit -m 'Add some amazing pattern'`)
-4. Push to the branch (`git push origin feature/amazing-pattern`)
+2. Create your feature branch (`git checkout -b feature/new-pattern`)
+3. Commit your changes (`git commit -m 'Add some pattern'`)
+4. Push to the branch (`git push origin feature/new-pattern`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
